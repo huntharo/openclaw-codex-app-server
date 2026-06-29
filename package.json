@@ -6,13 +6,18 @@
   "license": "MIT",
   "packageManager": "pnpm@10.29.3",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "openclaw": {
     "extensions": [
-      "./index.ts"
+      "./dist/index.js"
     ]
   },
   "scripts": {
     "project:sync": "node ./.agents/skills/project-manager/scripts/sync-work-items.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm run clean && pnpm run build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "pack:smoke": "node ./scripts/pack-smoke.mjs",

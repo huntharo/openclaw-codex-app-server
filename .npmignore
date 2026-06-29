@@ -1,9 +1,14 @@
 .github/
 .agents/
+.codex/
 .local/
 AGENTS.md
 OVERNIGHT-TODO.md
+CHANGELOG.md
 pnpm-lock.yaml
 scripts/
-src/**/*.test.ts
+index.ts
+index.test.ts
+src/
 tsconfig.json
+tsconfig.build.json
